@@ -10,8 +10,8 @@ describe('Thermostat', function() {
   })
 
   it('should increase the temperature by 10', function() {
-    thermostat.up(10)
-    expect(thermostat.temperature).toEqual(30)
+    thermostat.up(5)
+    expect(thermostat.temperature).toEqual(25)
   })
 
   it('should decreases the temperature by 10', function() {
@@ -28,7 +28,7 @@ describe('Thermostat', function() {
 
   it("should return a max temp of 25 degrees if power saving mode is on", function(){
     thermostat.powerSavingMode = true
-    
+
     var increaseTempBeyondMax = function() {
       thermostat.up(6)
     }
