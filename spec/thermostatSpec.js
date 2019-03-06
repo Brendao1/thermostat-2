@@ -23,6 +23,15 @@ describe('Thermostat', function() {
     var error = function() {
       thermostat.down(11)
     }
-    expect(error).toThrow("Min temperature is 10 degrees")
+    expect(error).toThrow('Min temperature is 10 degrees')
+  })
+
+  it("should return a max temp of 25 degrees if power saving mode is on", function(){
+    thermostat.powerSavingMode = true
+    
+    var increaseTempBeyondMax = function() {
+      thermostat.up(6)
+    }
+    expect(increaseTempBeyondMax).toThrow('Max temperature is 25 degrees')
   })
 })
