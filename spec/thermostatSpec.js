@@ -5,7 +5,6 @@ describe('Thermostat', function() {
     thermostat = new Thermostat()
   })
 
-
   it('should have a starting temperature of 20 degrees', function() {
     expect(thermostat.temperature).toEqual(20)
   })
@@ -15,4 +14,8 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(30)
   })
 
+  it('should decreases the temperature by 10', function() {
+    thermostat.down(10)
+    expect(thermostat.temperature).toEqual(10)
+  })
 })
