@@ -51,4 +51,14 @@ describe('Thermostat', function() {
     thermostat.temp = 17
     expect(thermostat.energyUsage()).toEqual("low-usage")
   })
+
+  it("it sets energy usage to medium-usage if temperature is less than 25 and more than 17", function() {
+    thermostat.temp = 18
+    expect(thermostat.energyUsage()).toEqual("medium-usage")
+  })
+
+  it("it sets energy usage to high-usage if temperature is more than 24", function() {
+    thermostat.temp = 25
+    expect(thermostat.energyUsage()).toEqual("high-usage")
+  })
 })
