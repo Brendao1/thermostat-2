@@ -18,4 +18,11 @@ describe('Thermostat', function() {
     thermostat.down(10)
     expect(thermostat.temperature).toEqual(10)
   })
+
+  it("doesn't go below 10 degrees", function(){
+    var error = function() {
+      thermostat.down(11)
+    }
+    expect(error).toThrow("Min temperature is 10 degrees")
+  })
 })
